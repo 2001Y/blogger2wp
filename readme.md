@@ -1,4 +1,4 @@
-# Google Blogger to WaordPress Converter
+# Google Blogger to WordPress Converter
 
 Blogger の記事を WorddPress に移行する Node のコード。 WP REST API を使っている。完全に自分用なので好きに改変して使ってほしい。
 
@@ -24,7 +24,7 @@ app.js を開いて、自分の環境に合わせる。
 ```js
 // ▼ ▼ ▼ ▼ ▼ ▼ ▼  OPTION  ▼ ▼ ▼ ▼ ▼ ▼ ▼
 
-const bloggerXml = "blog-02-21-2022.xml";
+const bloggerXml = "demo.xml";
 
 const URL = "https://yoshikitam.wpx.jp/2001y/";
 const WP_user = "2001Y"; //WPユーザー名

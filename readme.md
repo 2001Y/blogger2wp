@@ -1,28 +1,20 @@
-# Markdown file to WaordPress Converter
+# Google Blogger to WaordPress Converter
 
-Hugo や Hexo などの Markdown ファイルを使った記事を WorddPress に移行する Node のコード。 WP REST API を使っている。完全に自分用なので好きに改変して使ってほしい。
+Blogger の記事を WorddPress に移行する Node のコード。 WP REST API を使っている。完全に自分用なので好きに改変して使ってほしい。
 
-以下の Front matter に対応している。ファイル名は slug に指定されている。
-
-```markdown
----
-title: "Demo Markdown"
-date: 2021-03-07T01:00:22+09:00
-categories: ["Demo", "Markdown"]
-tags: ["Demo", "Markdown"]
-draft: true
----
-```
+Blogger にはカテゴリ機能がないので、タグのみに対応。slugはドメイン以下を指定。
 
 ## 使い方
 
-md フォルダ内に Markdown ファイルを配置して app.js を実行するだけ。
+Blogger のバックアップ機能でダウンロードしたxmlファイルを配置してapp.jsを実行するだけ。
 
 ### 準備
 
+Blogger のバックアップ機能でxmlファイルをダウンロードして、ルートディレクトリに配置。
+
 ```shell
-# コードをダウンロード
-git clone https://github.com/2001Y/md2wp.git
+# このコードをGithubからダウンロード
+git clone https://github.com/2001Y/blogger2wp.git
 # 必要なライブラリをダウンロード
 yarn
 ```
@@ -31,6 +23,8 @@ app.js を開いて、自分の環境に合わせる。
 
 ```js
 // ▼ ▼ ▼ ▼ ▼ ▼ ▼  OPTION  ▼ ▼ ▼ ▼ ▼ ▼ ▼
+
+const bloggerXml = "blog-02-21-2022.xml";
 
 const URL = "https://yoshikitam.wpx.jp/2001y/";
 const WP_user = "2001Y"; //WPユーザー名

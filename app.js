@@ -1,6 +1,6 @@
 // ▼ ▼ ▼ ▼ ▼ ▼ ▼  OPTION  ▼ ▼ ▼ ▼ ▼ ▼ ▼
 
-const sampleXml = "blog-02-21-2022.xml";
+const bloggerXml = "demo.xml";
 
 const URL = "https://yoshikitam.wpx.jp/2001y/";
 const WP_user = "2001Y"; //WPユーザー名
@@ -25,7 +25,7 @@ const fetchHead = {
     path.join(URL, "/wp-json/wp/v2/tags?per_page=100")
   ).then((response) => response.json());
 
-  const xmlData = fs.readFileSync(sampleXml, "utf-8");
+  const xmlData = fs.readFileSync(bloggerXml, "utf-8");
 
   var parser = new xml2js.Parser();
   const raw = await parser
